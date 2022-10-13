@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1D0FFDB-2CE5-4F36-9FBD-EF52C5352EF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DA_PTTKHTTT</RootNamespace>
+    <AssemblyName>DA_PTTKHTTT</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.21.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.21.6.1\lib\net462\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\Connection\DBConnection.cs" />
+    <Compile Include="DAO\Connection\DBOracleUtils.cs" />
+    <Compile Include="DAO\CTDangKyGoiTiemDAO.cs" />
+    <Compile Include="DAO\CTDangKyGoiTiemLeDAO.cs" />
+    <Compile Include="DAO\CTHoaDonDAO.cs" />
+    <Compile Include="DAO\CTPhieuDatHangDAO.cs" />
+    <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\HoSoTiemChungDAO.cs" />
+    <Compile Include="DAO\LichSuTiemChungDAO.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\LichLamViecDAO.cs" />
+    <Compile Include="DAO\LichLamViec_nvDAO.cs" />
+    <Compile Include="DAO\CTPhieuDatMuaDAO.cs" />
+    <Compile Include="DAO\GoiTiemDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\PhieuDangKyTiemDAO.cs" />
+    <Compile Include="DAO\VacXinDAO.cs" />
+    <Compile Include="DAO\PhieuDatHangDAO.cs" />
+    <Compile Include="DAO\PhieuDatMuaDAO.cs" />
+    <Compile Include="DAO\Thongtin_dk_lichlamviecDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DTO\CTDangKyGoiTiemDTO.cs" />
+    <Compile Include="DTO\CTDangKyGoiTiemLeDTO.cs" />
+    <Compile Include="DTO\CTHoaDonDTO.cs" />
+    <Compile Include="DTO\CTHoSoDTO.cs" />
+    <Compile Include="DTO\GoiTiemDTO.cs" />
+    <Compile Include="DTO\HoaDonDTO.cs" />
+    <Compile Include="DTO\HoSoTiemChungDTO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\PhieuDangKyTiem.cs" />
+    <Compile Include="DTO\VacXinDTO.cs" />
+    <Compile Include="DTO\PhieuDatHangDTO.cs" />
+    <Compile Include="DTO\PhieuDatMuaDTO.cs" />
+    <Compile Include="DTO\CTPhieuDatMuaDTO.cs" />
+    <Compile Include="DTO\LichLamViecDTO.cs" />
+    <Compile Include="DTO\Lichlamviec_nvDTO.cs" />
+    <Compile Include="DTO\LoginInfo.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\Thongtin_dk_lichlamviecDTO.cs" />
+    <Compile Include="Service\ChiDinhTiemChungService.cs" />
+    <Compile Include="Service\GoiTiemService.cs" />
+    <Compile Include="Service\VacXinService .cs" />
+    <Compile Include="Service\KhachHangService.cs" />
+    <Compile Include="Service\HoaDonService.cs" />
+    <Compile Include="Service\HoSoKhamBenhService.cs" />
+    <Compile Include="Service\HoSoTiemChungService.cs" />
+    <Compile Include="Service\LichSuTiemChungService.cs" />
+    <Compile Include="Service\NhanVienService .cs" />
+    <Compile Include="Service\LoginService.cs" />
+    <Compile Include="Service\LichLamViecService.cs" />
+    <Compile Include="Service\Lichlamviec_nvService.cs" />
+    <Compile Include="Service\PhieuDangKyTiemService.cs" />
+    <Compile Include="Service\PhieuDatHangService.cs" />
+    <Compile Include="Service\PhieuDatMuaService.cs" />
+    <Compile Include="Service\Thongtin_dk_lichlamviecService.cs" />
+    <Compile Include="View\BacSy\BacSy_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BacSy\BacSy_Home.Designer.cs">
+      <DependentUpon>BacSy_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BacSy\KhamSangLoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BacSy\KhamSangLoc.Designer.cs">
+      <DependentUpon>KhamSangLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BacSy\TiemChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BacSy\TiemChung.Designer.cs">
+      <DependentUpon>TiemChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\ChonGoiTiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ChonGoiTiem.Designer.cs">
+      <DependentUpon>ChonGoiTiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\DangKyTiemChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\DangKyTiemChung.Designer.cs">
+      <DependentUpon>DangKyTiemChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\DatMuaVacxin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\DatMuaVacxin.designer.cs">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\HOADON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\HOADON.Designer.cs">
+      <DependentUpon>HOADON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\KhachHang_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\KhachHang_Home.Designer.cs">
+      <DependentUpon>KhachHang_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\LichSuTiemChung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\LichSuTiemChung.Designer.cs">
+      <DependentUpon>LichSuTiemChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVienDieuHanh\NhanVienDieuHanh_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVienDieuHanh\NhanVienDieuHanh_Home.Designer.cs">
+      <DependentUpon>NhanVienDieuHanh_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVienDieuHanh\PhanCongBacSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVienDieuHanh\PhanCongBacSi.Designer.cs">
+      <DependentUpon>PhanCongBacSi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\NhanVienDieuHanh\ThietLapKhoangThoiGianDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVienDieuHanh\ThietLapKhoangThoiGianDangKy.Designer.cs">
+      <DependentUpon>ThietLapKhoangThoiGianDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVien\DangKyLichLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVien\DangKyLichLamViec.Designer.cs">
+      <DependentUpon>DangKyLichLamViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVien\NhanVien_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVien\NhanVien_Home.Designer.cs">
+      <DependentUpon>NhanVien_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVien\XemLichLamViec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVien\XemLichLamViec.Designer.cs">
+      <DependentUpon>XemLichLamViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhanVien\XemThongTinKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhanVien\XemThongTinKhachHang.Designer.cs">
+      <DependentUpon>XemThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\DuyetDSDatMua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\DuyetDSDatMua.Designer.cs">
+      <DependentUpon>DuyetDSDatMua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\GuiPDHDenNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\GuiPDHDenNCC.Designer.cs">
+      <DependentUpon>GuiPDHDenNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\LishSuDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\LishSuDatHang.Designer.cs">
+      <DependentUpon>LishSuDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLy\QuanLy_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLy\QuanLy_Home.Designer.cs">
+      <DependentUpon>QuanLy_Home.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\BacSy\BacSy_Home.resx">
+      <DependentUpon>BacSy_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BacSy\KhamSangLoc.resx">
+      <DependentUpon>KhamSangLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ChonGoiTiem.resx">
+      <DependentUpon>ChonGoiTiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\DangKyTiemChung.resx">
+      <DependentUpon>DangKyTiemChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\DatMuaVacxin.resx">
+      <DependentUpon>DatMuaVacxin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\HOADON.resx">
+      <DependentUpon>HOADON.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\KhachHang_Home.resx">
+      <DependentUpon>KhachHang_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\LichSuTiemChung.resx">
+      <DependentUpon>LichSuTiemChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVienDieuHanh\NhanVienDieuHanh_Home.resx">
+      <DependentUpon>NhanVienDieuHanh_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien\DangKyLichLamViec.resx">
+      <DependentUpon>DangKyLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVienDieuHanh\PhanCongBacSi.resx">
+      <DependentUpon>PhanCongBacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVienDieuHanh\ThietLapKhoangThoiGianDangKy.resx">
+      <DependentUpon>ThietLapKhoangThoiGianDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien\NhanVien_Home.resx">
+      <DependentUpon>NhanVien_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien\XemLichLamViec.resx">
+      <DependentUpon>XemLichLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhanVien\XemThongTinKhachHang.resx">
+      <DependentUpon>XemThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\DuyetDSDatMua.resx">
+      <DependentUpon>DuyetDSDatMua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\GuiPDHDenNCC.resx">
+      <DependentUpon>GuiPDHDenNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\LishSuDatHang.resx">
+      <DependentUpon>LishSuDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLy\QuanLy_Home.resx">
+      <DependentUpon>QuanLy_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Oracle.ManagedDataAccess.Client.Configuration.Section.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>
